@@ -1,0 +1,35 @@
+@model IEnumerable<SchoolManagementSystem.Models.StudentClassView>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <h3>Student FullName</h3>
+            </th>
+            <th>
+               <h3>Class Number</h3>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassNumber)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
